@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:olgpd="http://www.openlgpd.org/padroes/schemas" targetNamespace="http://www.openlgpd.org/padroes/schemas" elementFormDefault="qualified">
+    <simpleType name="dm_tipoTransacao">
+		<restriction base="string">
+			<enumeration value="SOLICITACAO_ESQUECIMENTO"/>
+		</restriction>
+    </simpleType>
+    <simpleType name="st_CPF">
+		<restriction base="string">
+			<pattern value="[0-9]{11}"/>
+		</restriction>
+		<!-- NOVO -->
+	</simpleType>
+</schema>

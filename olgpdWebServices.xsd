@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:olgpd="http://www.openlgpd.org/padroes/schemas" targetNamespace="http://www.openlgpd.org/padroes/schemas" elementFormDefault="qualified">
+    <include schemaLocation="olgpd.xsd" />
+    <include schemaLocation="olgpdComplexTypes.xsd" />
+    <element name="solicitaEsquecimentoWS">
+        <annotation>
+            <documentation> Titular solicita esquecimento dos dados</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="cabecalho" type="olgpd:cabecalhoTransacao" />
+                <element name="solicitaEsquecimento" type="olgpd:ct_solicitacaoEsquecimento" />
+                <element name="hash" type="string" />
+            </sequence>
+        </complexType>
+    </element>
+    
+</schema>

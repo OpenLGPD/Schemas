@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:olgpd="http://www.openlgpd.org/padroes/schemas" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.openlgpd.org/padroes/schemas" elementFormDefault="qualified">
+
+    <import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd" />
+    <include schemaLocation="olgpdSimpleTypes.xsd" />
+    <include schemaLocation="olgpdComplexTypes.xsd" />
+    <!-- Estrutura da mensagem do OpenLGPD -->
+    <element name="mensagemOpenLGPD">
+        <complexType>
+            <sequence>
+                <element name="cabecalho" type="olgpd:cabecalhoTransacao" />
+                <choice>
+                    <!--<element name="operadoraParaPrestador" type="olgpd:operadoraPrestador" minOccurs="0" />
+                    <element name="prestadorParaOperadora" type="olgpd:prestadorOperadora" minOccurs="0" />-->
+                </choice>
+                <element ref="ds:Signature" minOccurs="0" />
+            </sequence>
+        </complexType>
+    </element>
+    <!-- Definicao do cabecalho das mensagens -->
+    <complexType name="cabecalhoTransacao">
+        <sequence>
+            <element name="identificacaoTransacao">
+                <complexType>
+                    <sequence>
+                        <element name="tipoTransacao" type="olgpd:dm_tipoTransacao" />
+                        <element name="sequencialTransacao" type="string" />
+                        <element name="dataRegistroTransacao" type="date" />
+                        <element name="horaRegistroTransacao" type="date" />
+                    </sequence>
+                </complexType>
+            </element>
+        </sequence>
+    </complexType>
+</schema>
